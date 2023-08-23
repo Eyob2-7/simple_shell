@@ -7,7 +7,8 @@
  */
 int shell_env(void)
 {
-	for (int i = 0; environ[i]; i++)
+	int i;
+	for (i = 0; environ[i]; i++)
 	{
 		_puts(environ[i]);
 		_putchar('\n');

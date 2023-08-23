@@ -1,5 +1,5 @@
 #include "shell.h"
-​
+
 /**
  * _strdup - duplicates a string
  * @str: the string to duplicate
@@ -10,7 +10,7 @@ char *_strdup(const char *str)
 {
 int length = 0;
 char *ret;
-​
+
 if (str == NULL)
 return (NULL);
 while (*str++)
@@ -22,7 +22,7 @@ for (length++; length--;)
 ret[length] = *--str;
 return (ret);
 }
-​
+
 /**
  *_putchar - writes the character c to stdout
  * @c: The character to print
@@ -33,8 +33,8 @@ int _putchar(char c)
 {
 return (write(1, &c, 1));
 }
-​
-​
+
+
 /**
  * _atoi - Converts a string to an integer.
  * @str: The string to convert.
@@ -45,11 +45,11 @@ int _atoi(const char *str)
 {
 int i, sign;
 unsigned int num;
-​
+
 i = 0;
 sign = 1;
 num = 0;
-​
+
 while (str[i] != '\0')
 {
 if (str[i] == '-')
@@ -62,7 +62,7 @@ i++;
 }
 return (num *sign);
 }
-​
+
 /**
  **_memset - fills memory with a constant byte
  *@s: the pointer to the memory area
@@ -73,7 +73,7 @@ return (num *sign);
 char *_memset(char *s, char b, unsigned int n)
 {
 unsigned int i;
-​
+
 for (i = 0; i < n; i++)
 s[i] = b;
 return (s);

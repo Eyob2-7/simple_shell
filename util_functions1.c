@@ -1,5 +1,5 @@
 #include "shell.h"
-​
+
 /**
  * _strlen - returns the length of a string
  * @s: the string whose length to check
@@ -9,15 +9,15 @@
 int _strlen(const char *s)
 {
 int i = 0;
-​
+
 if (!s)
 return (0);
-​
+
 while (*s++)
 i++;
 return (i);
 }
-​
+
 /**
  * _strcmp - Compare two strings.
  * @s1: The first string to compare.
@@ -33,15 +33,15 @@ while (*s1 != '\0' && *s2 != '\0' && *s1 == *s2)
 s1++;
 s2++;
 }
-​
+
 return ((int) (*s1) -(*s2));
 }
-​
-​
+
+
 char *_strcpy(char *dest, char *src)
 {
 int i = 0;
-​
+
 if (dest == src || src == 0)
 return (dest);
 while (src[i])
@@ -52,7 +52,7 @@ i++;
 dest[i] = 0;
 return (dest);
 }
-​
+
 /**
  * _strcat - concatenates two strings
  * @dest: the destination buffer
@@ -63,7 +63,7 @@ return (dest);
 char *_strcat(char *dest, const char *src)
 {
 char *ret = dest;
-​
+
 while (*dest)
 dest++;
 while (*src)

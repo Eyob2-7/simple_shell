@@ -1,5 +1,5 @@
 #include "shell.h"
-​
+
 /**
  * handle_sigint - Signal handler for SIGINT (Ctrl+C)
  * @sig: Signal number
@@ -13,11 +13,11 @@
 void handle_sigint(int sig)
 {
 (void) sig;  /* Unused parameter */
-​
+
 _putchar('\n'); /* Print a newline character */
 prompt(); /* Display the shell prompt */
 }
-​
+
 /**
  * handle_sigquit - Signal handler for SIGQUIT (Ctrl+\)
  * @sig: Signal number
@@ -31,11 +31,11 @@ prompt(); /* Display the shell prompt */
 void handle_sigquit(int sig)
 {
 (void) sig;  /* Unused parameter */
-​
+
 _puterror("Quit (core dumped)\n"); /* Print error message */
 exit(EXIT_SUCCESS); /* Exit the shell with success status */
 }
-​
+
 /**
  * handle_sigstp - Signal handler for SIGTSTP (Ctrl+Z)
  * @sig: Signal number
@@ -49,7 +49,7 @@ exit(EXIT_SUCCESS); /* Exit the shell with success status */
 void handle_sigstp(int sig)
 {
 (void) sig;  /* Unused parameter */
-​
+
 _puts("\n"); /* Print a newline character */
 prompt(); /* Display the shell prompt */
 }

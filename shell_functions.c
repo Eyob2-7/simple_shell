@@ -1,6 +1,5 @@
 #include "shell.h"
-​
-​
+
 /**
  * find_in_path - Looks for a command in each directory specified in the PATH
  *                environment variable
@@ -14,7 +13,7 @@ char *find_in_path(char *command)
 struct stat st;
 int stat_ret, i;
 char buf[PATH_MAX_LENGTH], *path, *ret, **dir;
-​
+
 path = get_path();
 if (!path)
 return (NULL);
@@ -42,10 +41,10 @@ if (stat_ret == -1)
 free_tokens(dir);
 return (NULL);
 }
-​
-​
+
+
 static char *last_input;
-​
+
 /**
  * get_input - Read the line of input from user.
  *
@@ -56,14 +55,14 @@ char *get_input(void)
 char *input = NULL;
 size_t input_size = 0;
 ssize_t nread;
-​
+
 do {
 /* print shell prompt */
 prompt();
-​
+
 /* get a line of input from user */
 nread = getline(&input, &input_size, stdin);
-​
+
 /* check for EOF or error */
 if (nread == -1)
 {
@@ -71,17 +70,17 @@ free(input);
 _puts("\n");
 return (NULL);
 }
-​
+
 /* remove trailing newline character */
 input[nread - 1] = '\0';
-​
+
 } while (input[0] == '\0' || isspace(input[0]));
-​
+
 /* update last_input to point to the new input */
 last_input = input;
 return (input);
 }
-​
+
 /**
  * free_last_input - Frees the most recent input entered by the user.
  *
@@ -94,10 +93,10 @@ void free_last_input(void)
 free(last_input);
 last_input = NULL;
 }
-​
-​
-​
-​
+
+
+
+
 /**
  * prompt - Print shell prompt to stdin stream.
  *
@@ -108,8 +107,8 @@ void prompt(void)
 _puts(PROMPT);
 fflush(stdout);
 }
-​
-​
+
+
 /**
  * execute - Execute a command with arguments.
  * @argv: An array of strings containing the command and its arguments.
@@ -121,12 +120,12 @@ int execute(char **argv)
 pid_t id;
 int status = 0;
 char *cmd_path, *envp[2];
-​
+
 if (argv == NULL || *argv == NULL)
 return (status);
 if (check_for_builtin(argv))
 return (status);
-​
+
 id = fork();
 if (id < 0)
 {
