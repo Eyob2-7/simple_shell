@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * _puts - Prints a string to the standard output stream
+ * _printf - Prints a string to the standard output stream
  * @str: The string to print
  *
  * Description: This function prints the given string to the standard output
